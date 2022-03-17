@@ -8,13 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
   //user!: User;
+ 
   constructor() { }
- User=[{name_input:"hi", street_input:"e3", post_code:"20"}];
- user={name_input:"", street_input:"", post_code:""}
+ Users=[{username:"Quynh Giang", street:"Q1,Tp HCM", postcode:"041"},
+{username:"Dang Giang", street:"Hieu Le", postcode:"240"}];
+ user={username:"", street:"", postcode:""};
+ 
   ngOnInit(): void {
-   //this.user = new User('Default Username', 'Universe', 'XXXX'); //#khởi tạo user
+    
   }
   onSubmit(formValue: any){
     console.log(formValue)
+  }
+  currentIndex=null;
+  save(){
+    if(this.currentIndex==null){
+      this.Users.push(this.user);
+    }else{
+      this.Users.splice(this.currentIndex,1,this.user);
+    }
+    this.huy();
+  }
+  edit(index: any){
+    this.currentIndex=index
+    this.user={...this.Users[index]}; 
+  }
+  huy(){
+    this.user={username:"", street:"", postcode:""};
+    this.currentIndex=null;
   }
 }
