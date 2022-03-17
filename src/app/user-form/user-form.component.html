@@ -1,0 +1,59 @@
+<div class="col-xs-6 m-auto">
+    <div class="card my -3">
+        <div class="card-header text-uppercase bg-danger">
+            <i class="fas fa-list"></i>Form User
+        </div>
+        <div class="card-header ">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+                <div class="form-group">
+                  <label for="username">Name</label>
+                  <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="name_input" required minlength="5" #inputUserName="ngModel">
+                  <div class="alert alert-danger" *ngIf="!inputUserName.valid && (!inputUserName.pristine || userForm.submitted)">
+                    <small>Name is required and must have more than 5 characters</small>
+                  </div>      
+                </div>
+                <div class="form-group">
+                  <label for="street">Street</label>
+                  <input type="text" class="form-control" id="street" [(ngModel)]="user.street" name="street_input" required #inputStreet="ngModel">
+                  <div class="alert alert-danger" *ngIf="!inputStreet.valid && (!inputStreet.pristine || userForm.submitted)">
+                    <small>Street is required</small>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="postcode">Post code</label>
+                  <input type="text" class="form-control" id="postcode" [(ngModel)]="user.postcode" name="post_code">
+                </div>
+                <button   class="btn btn-success" (click)="save()">&nbsp;LƯU</button>
+                <button  class="btn btn-danger">&nbsp;HỦY</button>
+
+              </form>
+        </div>
+       
+          <!-- <hr>
+          <h4>Inputed Data</h4>
+          <p> {{ user | json }} </p>
+          <hr>
+          <h4>Form Data</h4>
+          <p> {{ userForm.value | json }} </p> -->
+    </div>
+    <div></div>
+    <table class="table table-bordered table-hover  ">
+        <thead class="thead table-info"> 
+          <tr>
+            <th>Username</th>
+            <th>Street</th>
+            <th >Postcode</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+   
+  </div>
+  
