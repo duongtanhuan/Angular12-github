@@ -7,8 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddUserComponent } from './user/add-user.component';
+ 
 import { UserComponent } from './user/user.component';
 import { UserService } from './user/user.service';
+ 
 
 @NgModule({
   declarations: [
