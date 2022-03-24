@@ -14,7 +14,9 @@ export class AddUserComponent {
   constructor(private router: Router, private userService: UserService) {
 
   }
-
+  ngOnInit(): void {
+     console.log("HHHHHHHHHHHHH");
+  };
   createUser(): void {
     this.userService.createUser(this.user)
         .subscribe( data => {
