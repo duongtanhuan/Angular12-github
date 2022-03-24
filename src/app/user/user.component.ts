@@ -23,4 +23,5 @@ export class UserComponent implements OnInit {
         this.users = this.users.filter(u => u !== user);
       })
   };
+  
 }

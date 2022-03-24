@@ -4,20 +4,20 @@
   <table class="table table-bordered table-hover ">
     <thead class="thead table-info">
     <tr>
-      <!-- <th class="hidden">Id</th> -->
+      <th class="hidden">Id</th>
       <th>Họ Tên</th>
       <th>Địa chỉ</th>
       <th>Chức vụ</th>
-      <!-- <th>Action</th> -->
+      <th>Action</th>
     </tr>
   </thead>
     <tbody>
-    <tr *ngFor="let user of users">
-      <!-- <td class="hidden"></td> -->
+    <tr *ngFor="let user of users;let i=index">
+      <td class="hidden">{{i+1}}</td>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.email}}</td>
-      <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td> -->
+      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
     </tr>
     </tbody>
   </table>
