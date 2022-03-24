@@ -8,8 +8,8 @@ import { UserService } from './user.service';
   templateUrl: './add-user.component.html'
 })
 export class AddUserComponent {
-
-  user!: User;
+  
+  user: User =new User(0,"","","");
 
   constructor(private router: Router, private userService: UserService) {
 
