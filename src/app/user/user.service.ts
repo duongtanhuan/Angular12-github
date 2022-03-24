@@ -11,6 +11,8 @@ const httpOptions = {
 @Injectable()
 export class UserService {
     //user: User = new User();
+    //user: User =new User(0,"","","");
+
   constructor(private http:HttpClient) {}
 
   //private userUrl = 'http://localhost:8080/user-portal/user';
