@@ -16,7 +16,7 @@ export class AddUserComponent {
 
   }
   
-  onSubmit(formData:any):void{
+  onSubmit(ngForm:any):void{
 
   }
   ngOnInit(): void {

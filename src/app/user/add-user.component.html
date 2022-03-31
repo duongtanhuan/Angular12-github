@@ -3,8 +3,8 @@
       <div class="card-header text-uppercase bg-danger">
           <i class="fas fa-list"></i>Form User
       </div>
-      <div class="card-header ">
-          <form>
+      <div class="card-header">
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
               <div  >
                 <label for="firstName">Họ Tên</label>
                 <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName" required minlength="5" #inputUserName="ngModel">
