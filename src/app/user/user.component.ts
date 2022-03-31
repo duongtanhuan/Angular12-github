@@ -24,10 +24,19 @@ export class UserComponent implements OnInit {
         this.users = this.users.filter(u => u !== user);
       })
   };
-  downloadFile(filename: string): void {
+  downloadFilePdf(filename: string): void {
     this.userService
       .download(filename)
-      .subscribe(blob => this.downLoadFile1(blob, 'pdf', filename));
+      .subscribe(blob =>{
+        if(blob){
+          this.downLoadFile1(blob, 'pdf', filename);
+        }
+      }) ;
+  }
+  downloadFileExcel(filename: string): void {
+    this.userService
+      .download(filename)
+      .subscribe(blob => this.downLoadFile1(blob, 'xlsx', filename));
   }
 
   downLoadFile1(data: any, type: string, fileName: string) {
@@ -58,7 +67,5 @@ export class UserComponent implements OnInit {
 }
 
 
-function saveAs(blob: Blob, filename: string): void {
-  throw new Error('Function not implemented.');
-}
+ 
 

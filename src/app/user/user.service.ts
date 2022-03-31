@@ -11,9 +11,7 @@ const httpOptions = {
 
 @Injectable()
 export class UserService {
-  getPilotReports(params: any) {
-    throw new Error('Method not implemented.');
-  }
+  
     //user: User = new User();
     //user: User =new User(0,"","","");
 
